@@ -2,165 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Y.E.S. SAI BHASKAR - GCP DevOps & SRE Engineer</title>
+  <title>Y.E.S. SAI BHASKAR - Infrastructure Lead</title>
   <style>
-    :root {
-      --primary: #0f172a;
-      --accent: #0284c7;
-      --accent-light: #f0f9ff;
-      --accent-border: #bae6fd;
-      --text-dark: #1e293b;
-      --text-muted: #475569;
-      --bg-light: #f8fafc;
-      --border-color: #e2e8f0;
+    @page {
+      size: A4;
+      margin: 10mm 10mm;
+      background-color: #ffffff;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      line-height: 1.35;
+      color: #1e293b;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-dark);
-      background-color: #f1f5f9;
-      padding: 30px 15px;
+    .header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px 45px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Header Styling */
-    header {
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      font-size: 28px;
+    .name {
+      font-size: 20pt;
       font-weight: 800;
-      color: var(--primary);
+      color: #0f172a;
       letter-spacing: -0.5px;
+      margin: 0;
     }
 
     .subtitle {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--accent);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0284c7;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 14px;
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 8.5pt;
+      color: #475569;
+      margin-top: 6px;
     }
 
-    .contact-info a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-    }
-
-    .contact-item:not(:last-child)::after {
-      content: "•";
-      margin-left: 15px;
+    .contact-info span {
+      margin: 0 4px;
       color: #cbd5e1;
     }
 
-    /* Section Styling */
+    .contact-info a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     section {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 15px;
+      font-size: 10pt;
       font-weight: 700;
-      color: var(--primary);
+      color: #0f172a;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--accent-light);
-      position: relative;
-      margin-bottom: 16px;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background-color: var(--accent);
+      letter-spacing: 0.8px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #e2e8f0;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      page-break-after: avoid;
     }
 
     p {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-size: 8.8pt;
+      color: #475569;
+      line-height: 1.4;
+      margin: 2px 0 4px 0;
     }
 
-    /* Skill Badge */
     .highlight-pill {
-      background-color: var(--accent-light);
+      background-color: #f0f9ff;
       color: #0369a1;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 13px;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 8pt;
       font-weight: 600;
-      border: 1px solid var(--accent-border);
+      border: 1px solid #bae6fd;
     }
 
-    /* Technical Matrix Table */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
+      margin-top: 4px;
+      margin-bottom: 6px;
+      border: 1px solid #e2e8f0;
     }
 
     th {
-      background-color: var(--bg-light);
-      color: var(--text-muted);
-      font-size: 12px;
+      background-color: #f8fafc;
+      color: #475569;
+      font-size: 8pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 12px 16px;
+      padding: 4px 8px;
       text-align: left;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #e2e8f0;
     }
 
     td {
-      padding: 12px 16px;
-      font-size: 14px;
-      color: var(--text-dark);
+      padding: 4px 8px;
+      font-size: 8.5pt;
+      color: #1e293b;
       border-bottom: 1px solid #f1f5f9;
       vertical-align: top;
     }
@@ -170,96 +129,64 @@
     }
 
     .skill-cat {
-      font-weight: 600;
-      color: var(--primary);
-      width: 28%;
+      font-weight: 700;
+      color: #0f172a;
+      width: 26%;
     }
 
-    /* Experience Styling */
     .exp-item {
-      margin-bottom: 24px;
-    }
-
-    .role-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
     }
 
     .role-title {
-      font-size: 16px;
+      font-size: 9.5pt;
       font-weight: 700;
-      color: var(--primary);
+      color: #0f172a;
     }
 
     .company-meta {
-      font-size: 14px;
+      font-size: 8.5pt;
       font-weight: 600;
-      color: var(--accent);
-      margin-top: 2px;
-      margin-bottom: 10px;
+      color: #0284c7;
+      margin-top: 1px;
+      margin-bottom: 4px;
     }
 
     ul {
-      margin-left: 20px;
-      font-size: 14px;
-      color: var(--text-muted);
+      margin: 2px 0 4px 14px;
+      padding: 0;
+      font-size: 8.5pt;
+      color: #334155;
     }
 
     li {
-      margin-bottom: 8px;
-      line-height: 1.55;
+      margin-bottom: 3px;
+      line-height: 1.35;
     }
 
     li strong {
-      color: var(--primary);
+      color: #0f172a;
       font-weight: 600;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      .container {
-        padding: 25px 20px;
-      }
-      .contact-item:not(:last-child)::after {
-        display: none;
-      }
-      .contact-info {
-        flex-direction: column;
-        gap: 6px;
-      }
-      .skill-cat {
-        width: 100%;
-        display: block;
-      }
-      td {
-        display: block;
-      }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-
   <!-- Header -->
-  <header>
-    <h1>Y.E.S. SAI BHASKAR</h1>
-    <div class="subtitle">Senior GCP & AWS DevOps Engineer</div>
+  <div class="header">
+    <div class="name">Y.E.S. SAI BHASKAR</div>
+    <div class="subtitle">Infrastructure Lead | Senior GCP & AWS DevOps Engineer | Harness & Dynatrace Specialist</div>
     <div class="contact-info">
-      <div class="contact-item">Hyderabad, India</div>
-      <div class="contact-item"><a href="tel:+919985588124">+91 9985588124</a></div>
-      <div class="contact-item"><a href="mailto:saibaskar.yes@gmail.com">saibaskar.yes@gmail.com</a></div>
-      <div class="contact-item"><a href="https://profile-git-main-sai-bhaskar-337s-projects.vercel.app/" target="_blank">github.com/sai-bhaskar-337</a></div>
+      Hyderabad, India <span>|</span> +91 9985588124 <span>|</span> saibaskar.yes@gmail.com <span>|</span> <a href="https://profile-git-main-sai-bhaskar-337s-projects.vercel.app/">profile-git-main-sai-bhaskar-337s-projects.vercel.app</a>
     </div>
-  </header>
+  </div>
 
   <!-- Summary -->
   <section>
     <h2>Professional Overview</h2>
     <p>
-      Results-driven DevOps & Site Reliability Engineer with over 5.5 years of experience automating, securing, and scaling enterprise cloud infrastructure. Relevant 3 years of experience in Google Cloud Platform (GCP), leveraging Infrastructure-as-Code (<span class="highlight-pill">Terraform</span>) for automated provisioning. Specialized in continuous delivery pipelines using <span class="highlight-pill">Harness</span> for zero-downtime progressive deployments (Canary / Blue-Green) and full-stack observability with <span class="highlight-pill">Dynatrace OneAgent & Davis AI</span> for proactive root-cause analysis. Proven track record of reducing MTTR by 45% and eliminating manual deployment tasks by 50%.
+      Results-driven Infrastructure Lead and DevOps & Site Reliability Specialist with over 5.5 years of experience leading, automating, securing, and scaling enterprise cloud infrastructure. Expertise in Google Cloud Platform (GCP), AWS, and modern serverless frontend platforms (<span class="highlight-pill">Vercel</span>), leveraging Infrastructure-as-Code (<span class="highlight-pill">Terraform</span>) to direct large-scale Core Banking System (CBS) cloud migrations, web application deployments, financial regulatory compliance, and FinOps cost optimization strategies. Specialized in continuous delivery pipelines using <span class="highlight-pill">Harness</span> for zero-downtime progressive deployments (Canary / Blue-Green) and full-stack observability with <span class="highlight-pill">Dynatrace OneAgent & Davis AI</span> for proactive root-cause analysis.
     </p>
   </section>
 
@@ -270,25 +197,25 @@
       <thead>
         <tr>
           <th>Area</th>
-          <th>Technologies & Tools</th>
+          <th>Technologies & Leadership Competencies</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="skill-cat">Cloud Infrastructure</td>
-          <td>Google Cloud Platform (GKE, GCE, Cloud Run, Cloud Functions, Cloud SQL, Secret Manager, KMS, Pub/Sub), AWS (EKS, EC2, S3, Lambda, IAM)</td>
+          <td class="skill-cat">Infrastructure Leadership & Banking</td>
+          <td><strong>Infrastructure Lead</strong>, Cloud Strategy & Governance, Google Cloud Platform (GKE, GCE, Cloud Run, Cloud Functions, Cloud SQL, Secret Manager, KMS, Pub/Sub), AWS (EKS, EC2, S3, Lambda, IAM), <strong>Core Banking System (CBS) Cloud Migrations</strong></td>
         </tr>
         <tr>
-          <td class="skill-cat">Continuous Delivery</td>
-          <td><span class="highlight-pill">Harness</span> (GitOps, Canary, Blue-Green Releases), Jenkins, Cloud Build, GitHub Actions, Docker, Kubernetes (GKE)</td>
+          <td class="skill-cat">Continuous Delivery & Modern Hosting</td>
+          <td><span class="highlight-pill">Harness</span> (GitOps, Canary, Blue-Green Releases), <strong>Vercel Enterprise Platform (Edge Networks, Serverless Deployments, Git Automation)</strong>, Jenkins, Cloud Build, GitHub Actions, Docker, Kubernetes (GKE)</td>
         </tr>
         <tr>
           <td class="skill-cat">Observability & APM</td>
           <td><span class="highlight-pill">Dynatrace</span> (OneAgent, Davis AI Root Cause Engine, Synthetic Monitoring), GCP Monitoring & Logging, Prometheus, Grafana</td>
         </tr>
         <tr>
-          <td class="skill-cat">Infrastructure as Code</td>
-          <td>Terraform (Modular Architecture, Remote State), CloudFormation, Bash / Shell Scripting, Python</td>
+          <td class="skill-cat">Infrastructure as Code & FinOps</td>
+          <td>Terraform (Modular Architecture, Remote State), FinOps Cloud Cost Optimization, Compliance Frameworks (PCI-DSS / Banking Regulations), Bash / Shell Scripting, Python</td>
         </tr>
         <tr>
           <td class="skill-cat">Security & Networking</td>
@@ -301,6 +228,18 @@
   <!-- Experience -->
   <section>
     <h2>Work Experience</h2>
+
+    <div class="exp-item">
+      <div class="role-title">Infrastructure Lead</div>
+      <div class="company-meta">Coforge &nbsp;•&nbsp; May 22, 2026 – September 19, 2026 &nbsp;•&nbsp; Hyderabad, India</div>
+      <ul>
+        <li><strong>Infrastructure Leadership & CBS Cloud Migration:</strong> Served as Infrastructure Lead directing the end-to-end migration of mission-critical Core Banking System (CBS) workloads to scalable GCP/AWS cloud environments using automated, modular Terraform infrastructure.</li>
+        <li><strong>Vercel Platform Deployment & Edge Architecture:</strong> Architected and managed automated frontend deployments on the Vercel platform; integrated Git-driven CI/CD workflows, custom domains, serverless edge functions, and preview environments for high-performance banking web interfaces.</li>
+        <li><strong>Banking Regulatory Compliance & Security Governance:</strong> Led the architectural design and implementation of zero-trust security controls, automated compliance auditing, and data encryption standards (KMS) to strictly meet financial regulatory frameworks (PCI-DSS, RBI/SOC2 compliance).</li>
+        <li><strong>FinOps & Cloud Cost Optimization:</strong> Orchestrated enterprise-wide cloud cost optimization initiatives across banking environments—leveraging resource right-sizing, GKE autoscaling rules, committed use discounts, and idle asset lifecycle policies to significantly cut cloud expenditure.</li>
+        <li><strong>High Availability & Team Oversight:</strong> Managed technical deliverables, cross-team alignment, and zero-downtime cutover strategies to ensure uninterrupted, high-availability transaction processing for core banking services.</li>
+      </ul>
+    </div>
 
     <div class="exp-item">
       <div class="role-title">Senior GCP DevOps & Observability Engineer</div>
@@ -343,7 +282,6 @@
         <li><strong>Network Security:</strong> Managed Fortinet FortiGate firewall policies and performed regular vulnerability scans using Nessus.</li>
       </ul>
     </div>
-  </section>
 
   <!-- Education -->
   <section>
@@ -353,8 +291,6 @@
       JNTU Hyderabad (2018)
     </p>
   </section>
-
-</div>
 
 </body>
 </html>
