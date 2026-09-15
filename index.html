@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Y.E.S. SAI BHASKAR - Infrastructure Lead & GCP DevOps Engineer</title>
   <style>
     :root {
@@ -14,6 +14,7 @@
       --text-muted: #475569;
       --bg-light: #f8fafc;
       --border-color: #e2e8f0;
+      --radius: 12px;
     }
 
     * {
@@ -23,58 +24,62 @@
     }
 
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
       color: var(--text-dark);
       background-color: #f1f5f9;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 40px 15px;
+      padding: 2rem 1rem;
     }
 
+    /* Fully Responsive Card Layout */
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 40px 45px;
-      border-radius: 12px;
+      padding: 2.5rem 3rem;
+      border-radius: var(--radius);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
-    /* Centered Header Styling */
+    /* Centered Header */
     header {
       border-bottom: 2px solid var(--border-color);
-      padding-bottom: 20px;
-      margin-bottom: 24px;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
       text-align: center;
     }
 
     h1 {
-      font-size: 26px;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
       font-weight: 800;
       color: var(--primary);
       letter-spacing: -0.5px;
+      line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 13.5px;
+      font-size: clamp(0.85rem, 2vw, 1rem);
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-top: 4px;
+      margin-top: 0.5rem;
     }
 
+    /* Responsive Flexbox Contact Bar */
     .contact-info {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-top: 12px;
-      font-size: 13.5px;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
 
@@ -82,6 +87,7 @@
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
+      word-break: break-word;
     }
 
     .contact-info a:hover {
@@ -95,25 +101,25 @@
 
     .contact-item:not(:last-child)::after {
       content: "•";
-      margin-left: 15px;
+      margin-left: 1.25rem;
       color: #cbd5e1;
     }
 
     /* Section Styling */
     section {
-      margin-bottom: 22px;
+      margin-bottom: 1.75rem;
     }
 
     h2 {
-      font-size: 14px;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding-bottom: 4px;
+      padding-bottom: 0.35rem;
       border-bottom: 2px solid var(--accent-light);
       position: relative;
-      margin-bottom: 12px;
+      margin-bottom: 1rem;
     }
 
     h2::after {
@@ -121,98 +127,106 @@
       position: absolute;
       bottom: -2px;
       left: 0;
-      width: 40px;
+      width: 45px;
       height: 2px;
       background-color: var(--accent);
     }
 
     p {
-      font-size: 13.5px;
+      font-size: 0.925rem;
       color: var(--text-muted);
-      line-height: 1.55;
-      margin: 2px 0 6px 0;
+      line-height: 1.6;
+      margin: 0.25rem 0 0.5rem 0;
     }
 
-    /* Skill Badge */
+    /* Skill Pill Badge */
     .highlight-pill {
       background-color: var(--accent-light);
       color: #0369a1;
-      padding: 1px 6px;
+      padding: 0.15rem 0.45rem;
       border-radius: 4px;
-      font-size: 12.5px;
+      font-size: 0.825rem;
       font-weight: 600;
       border: 1px solid var(--accent-border);
+      display: inline-block;
     }
 
-    /* Technical Matrix Table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 6px;
-      margin-bottom: 12px;
+    /* Responsive Capabilities Grid/Table */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
       border-radius: 8px;
       overflow: hidden;
-      border: 1px solid var(--border-color);
+      margin-top: 0.5rem;
     }
 
-    th {
+    .skills-header {
+      display: flex;
       background-color: var(--bg-light);
-      color: var(--text-muted);
-      font-size: 11.5px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 8px 12px;
-      text-align: left;
-      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
     }
 
-    td {
-      padding: 8px 12px;
-      font-size: 13px;
-      color: var(--text-dark);
+    .skills-row {
+      display: flex;
       border-bottom: 1px solid #f1f5f9;
-      vertical-align: top;
     }
 
-    tr:last-child td {
+    .skills-row:last-child {
       border-bottom: none;
     }
 
-    .skill-cat {
-      font-weight: 600;
+    .skills-col-cat {
+      width: 30%;
+      min-width: 200px;
+      padding: 0.75rem 1rem;
+      font-weight: 700;
       color: var(--primary);
-      width: 28%;
+      font-size: 0.875rem;
+      border-right: 1px solid #f1f5f9;
+      background-color: #ffffff;
+    }
+
+    .skills-col-tech {
+      width: 70%;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: var(--text-dark);
     }
 
     /* Experience Styling */
     .exp-item {
-      margin-bottom: 16px;
+      margin-bottom: 1.25rem;
     }
 
     .role-title {
-      font-size: 14.5px;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--primary);
     }
 
     .company-meta {
-      font-size: 13px;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--accent);
-      margin-top: 1px;
-      margin-bottom: 6px;
+      margin-top: 0.15rem;
+      margin-bottom: 0.5rem;
     }
 
     ul {
-      margin-left: 18px;
-      font-size: 13px;
+      margin-left: 1.25rem;
+      font-size: 0.875rem;
       color: var(--text-muted);
     }
 
     li {
-      margin-bottom: 4px;
-      line-height: 1.45;
+      margin-bottom: 0.35rem;
+      line-height: 1.5;
     }
 
     li strong {
@@ -220,27 +234,72 @@
       font-weight: 600;
     }
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
+    /* ==========================================================================
+       MEDIA QUERIES (Mobile Phones, Smart Phones, Tablets, Laptops, Big Screens)
+       ========================================================================== */
+
+    /* Small & Medium Mobile Screens (< 640px) */
+    @media (max-width: 640px) {
       body {
-        padding: 15px 5px;
+        padding: 0.75rem 0.5rem;
       }
       .container {
-        padding: 20px 15px;
+        padding: 1.25rem 1rem;
+        border-radius: 8px;
       }
       .contact-item:not(:last-child)::after {
         display: none;
       }
       .contact-info {
         flex-direction: column;
-        gap: 6px;
+        gap: 0.35rem;
       }
-      .skill-cat {
+      .skills-header {
+        display: none; /* Hide header on mobile stacked view */
+      }
+      .skills-row {
+        flex-direction: column;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .skills-col-cat {
         width: 100%;
-        display: block;
+        min-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+        background-color: var(--bg-light);
+        padding: 0.5rem 0.75rem;
       }
-      td {
-        display: block;
+      .skills-col-tech {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+      }
+      ul {
+        margin-left: 1rem;
+      }
+    }
+
+    /* Tablets & Laptops (641px - 1024px) */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .container {
+        padding: 2rem 2.25rem;
+      }
+      .skills-col-cat {
+        width: 32%;
+        min-width: 180px;
+      }
+      .skills-col-tech {
+        width: 68%;
+      }
+    }
+
+    /* Extra Large & Ultrawide Big Screens (> 1400px) */
+    @media (min-width: 1401px) {
+      .container {
+        max-width: 1100px;
+        padding: 3rem 3.5rem;
+      }
+      body {
+        font-size: 17px;
       }
     }
   </style>
@@ -249,7 +308,7 @@
 
 <div class="container">
 
-  <!-- Centered Header -->
+  <!-- Centered Responsive Header -->
   <header>
     <h1>Y.E.S. SAI BHASKAR</h1>
     <div class="subtitle">Infrastructure Lead | Senior GCP & AWS DevOps Engineer </div>
@@ -257,7 +316,7 @@
       <div class="contact-item">Hyderabad, India</div>
       <div class="contact-item"><a href="tel:+919985588124">+91 9985588124</a></div>
       <div class="contact-item"><a href="mailto:saibaskar.yes@gmail.com">saibaskar.yes@gmail.com</a></div>
-      <div class="contact-item"><a href="https://profile-git-main-sai-bhaskar-337s-projects.vercel.app/" target="_blank">profile-git-main-sai-bhaskar-337s-projects.vercel.app</a></div>
+      <div class="contact-item"><a href="https://profile-git-main-sai-bhaskar-337s-projects.vercel.app/" target="_blank" rel="noopener">profile-git-main-sai-bhaskar-337s-projects.vercel.app</a></div>
     </div>
   </header>
 
@@ -269,42 +328,43 @@
     </p>
   </section>
 
-  <!-- Technical Matrix -->
+  <!-- Responsive Capabilities Matrix Grid -->
   <section>
     <h2>Technical Capabilities</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Technologies & Leadership Competencies</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="skill-cat">Infrastructure Leadership & Banking</td>
-          <td><strong>Infrastructure Lead</strong>, Cloud Strategy & Governance, Google Cloud Platform (GKE, GCE, Cloud Run, Cloud Functions, Cloud SQL, Secret Manager, KMS, Pub/Sub), AWS (EKS, EC2, S3, Lambda, IAM), <strong>Core Banking System (CBS) Cloud Migrations</strong></td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Continuous Delivery & Modern Hosting</td>
-          <td><span class="highlight-pill">Harness</span> (GitOps, Canary, Blue-Green Releases), <strong>Vercel Enterprise Platform (Edge Networks, Serverless Deployments, Git Automation)</strong>, Jenkins, Cloud Build, GitHub Actions, Docker, Kubernetes (GKE)</td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Observability & APM</td>
-          <td><span class="highlight-pill">Dynatrace</span> (OneAgent, Davis AI Root Cause Engine, Synthetic Monitoring), GCP Monitoring & Logging, Prometheus, Grafana</td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Infrastructure as Code & FinOps</td>
-          <td>Terraform (Modular Architecture, Remote State), FinOps Cloud Cost Optimization, Compliance Frameworks (PCI-DSS / Banking Regulations), Bash / Shell Scripting, Python</td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Security & Networking</td>
-          <td>VPC Peering, Cloud NAT, Service Accounts, RBAC, Secret Manager, HashiCorp Vault, Postman API Testing</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="skills-grid">
+      <div class="skills-header">
+        <div class="skills-col-cat" style="background-color: transparent;">Area</div>
+        <div class="skills-col-tech">Technologies & Leadership Competencies</div>
+      </div>
+      
+      <div class="skills-row">
+        <div class="skills-col-cat">Infrastructure Leadership & Banking</div>
+        <div class="skills-col-tech"><strong>Infrastructure Lead</strong>, Cloud Strategy & Governance, Google Cloud Platform (GKE, GCE, Cloud Run, Cloud Functions, Cloud SQL, Secret Manager, KMS, Pub/Sub), AWS (EKS, EC2, S3, Lambda, IAM), <strong>Core Banking System (CBS) Cloud Migrations</strong></div>
+      </div>
+
+      <div class="skills-row">
+        <div class="skills-col-cat">Continuous Delivery & Modern Hosting</div>
+        <div class="skills-col-tech"><span class="highlight-pill">Harness</span> (GitOps, Canary, Blue-Green Releases), <strong>Vercel Enterprise Platform (Edge Networks, Serverless Deployments, Git Automation)</strong>, Jenkins, Cloud Build, GitHub Actions, Docker, Kubernetes (GKE)</div>
+      </div>
+
+      <div class="skills-row">
+        <div class="skills-col-cat">Observability & APM</div>
+        <div class="skills-col-tech"><span class="highlight-pill">Dynatrace</span> (OneAgent, Davis AI Root Cause Engine, Synthetic Monitoring), GCP Monitoring & Logging, Prometheus, Grafana</div>
+      </div>
+
+      <div class="skills-row">
+        <div class="skills-col-cat">Infrastructure as Code & FinOps</div>
+        <div class="skills-col-tech">Terraform (Modular Architecture, Remote State), FinOps Cloud Cost Optimization, Compliance Frameworks (PCI-DSS / Banking Regulations), Bash / Shell Scripting, Python</div>
+      </div>
+
+      <div class="skills-row">
+        <div class="skills-col-cat">Security & Networking</div>
+        <div class="skills-col-tech">VPC Peering, Cloud NAT, Service Accounts, RBAC, Secret Manager, HashiCorp Vault, Postman API Testing</div>
+      </div>
+    </div>
   </section>
 
-  <!-- Experience -->
+  <!-- Work Experience -->
   <section>
     <h2>Work Experience</h2>
 
